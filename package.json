@@ -1,10 +1,12 @@
 {
   "name": "backed-development",
   "version": "1.0.0",
-  "description": "namste this is backend development",
+  "description": "this is backend development",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -r dotenv/config src/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,9 @@
   },
   "homepage": "https://github.com/himanshusoni98/backend-dev#readme",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "mongoose": "^8.4.1",
     "nodemon": "^3.1.3",
     "prettier": "^3.3.2"
   }
