@@ -11,3 +11,4 @@ The project uses the following dependencies:
 -mongoose-aggregate-paginate-v2 - A plugin for Mongoose for aggregating paginated results.
 -nodemon - A tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
 -prettier - An opinionated code formatter.
+-multer - its a middleware 
