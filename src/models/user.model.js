@@ -33,7 +33,7 @@ const userSchema = new mongoose.Schema({
             ref: "video"
         }
     ],
-    avtar:{
+    avatar:{
         type:String,
         required:true
     },
@@ -41,7 +41,7 @@ const userSchema = new mongoose.Schema({
         type:String
     },
     refreshtoken:{
-        type:string
+        type: String
     },
 },{timestamps:true}
 )
@@ -50,7 +50,7 @@ userSchema.pre("save",async function(next){
     if(!this.isModified("password"))
         return next();
 
-    this.password = bcrypt.hash(this.password,10)
+    this.password =await bcrypt.hash(this.password,10)
     next();
 })
 
@@ -85,4 +85,6 @@ userSchema.methods.generaterefreshtoken = function(){
     }
 )
 }
-export const user = mongoose.model("user", userSchema);
+const User = mongoose.model("User", userSchema);
+
+export default User;
